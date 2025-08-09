@@ -18,6 +18,7 @@ app.use(cors({
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
+app.use('/uploads2', express.static('uploads2'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', router);

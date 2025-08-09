@@ -69,11 +69,7 @@ export const GetAllType = async (req, res) => {
 
 export const addAsset = async (req, res) => {
   try {
-    if (!req.file)
-      return res
-        .status(400)
-        .json({ status: 'error', message: 'กรุณาแนบไฟล์รูปภาพ' });
-
+   
     const {
       asset_name,
       type_id,
@@ -132,7 +128,7 @@ export const addAsset = async (req, res) => {
         insurance_policy_no,
         notes,
       },
-      req.file.path
+      req.file ? req.file.path : null
     );
 
     return res.status(201).json({

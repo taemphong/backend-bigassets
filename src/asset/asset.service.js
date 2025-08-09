@@ -195,6 +195,7 @@ export class AssetService {
       va.insurance_policy_no,
       va.notes AS vehicle_notes
 
+      
     FROM assets a
     LEFT JOIN asset_types t ON a.type_id = t.type_id
     LEFT JOIN employees e ON a.employee_id = e.employee_id
